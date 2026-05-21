@@ -1,0 +1,12 @@
+Nguyên tắc thiết kế bị vi phạm
+Separation of Concerns (Tách biệt mối quan tâm):
+Logic nghiệp vụ (xử lý giao dịch) và logic kỹ thuật (đo hiệu năng, logging) đang bị trộn lẫn trong cùng một phương thức.
+
+Single Responsibility Principle (SRP - Nguyên tắc trách nhiệm đơn lẻ):
+Mỗi lớp/phương thức chỉ nên có một lý do để thay đổi. Ở đây, TransactionService vừa chịu trách nhiệm xử lý giao dịch, vừa chịu trách nhiệm đo thời gian → vi phạm SRP.
+
+Open/Closed Principle (OCP):
+Khi muốn thêm chức năng đo thời gian cho các phương thức khác, ta phải sửa trực tiếp code hiện có. Điều này vi phạm nguyên tắc "mở rộng nhưng không sửa đổi".
+
+DRY (Don't Repeat Yourself):
+Đoạn code đo thời gian bị lặp lại ở nhiều nơi, trái với nguyên tắc DRY.
